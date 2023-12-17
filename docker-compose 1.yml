@@ -1,0 +1,11 @@
+version: "1.0"
+
+services:
+  # The web container is an instance of exactly the same Docker image as your
+  # Cloud application container.
+  web:
+    build: .
+    expose:
+      - "80"
+    ports:
+      - "8081:8081"

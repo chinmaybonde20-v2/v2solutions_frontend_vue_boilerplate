@@ -1,0 +1,33 @@
+image: node:16.5.0
+
+services:
+  - docker:dind
+
+stages:
+  - test
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm --version
+  tags:
+    - linux
+
+test:
+  stage: test
+  script:
+    - npm --version
+    - npm install
+    - npm run test:unit
+  tags:
+    - linux
+
+deploy:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+  tags:
+    - linux
