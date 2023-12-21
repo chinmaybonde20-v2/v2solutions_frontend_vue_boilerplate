@@ -1,4 +1,3 @@
-// Import necessary functions and mount the component
 import { mount } from "@vue/test-utils";
 import Login from "@/modules/auth/views/AppLogin.vue";
 
