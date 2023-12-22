@@ -14,7 +14,7 @@
           placeholder="Enter your name"
           @input="() => performValidation('name')"
         />
-        <p class="error-text">{{ nameError }}</p>
+        <p id="nameErrMsg" class="error-text">{{ nameError }}</p>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
@@ -26,7 +26,7 @@
           placeholder="Enter your email"
           @input="() => performValidation('email')"
         />
-        <p class="error-text">{{ emailError }}</p>
+        <p id="emailErrMsg" class="error-text">{{ emailError }}</p>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
@@ -38,7 +38,7 @@
           placeholder="Enter password"
           @input="() => performValidation('password')"
         />
-        <p class="error-text">{{ passwordError }}</p>
+        <p id="passwordErrMsg" class="error-text">{{ passwordError }}</p>
       </div>
       <div class="mb-3">
         <label for="confirmPassword" class="form-label">Confirm Password</label>
@@ -50,7 +50,9 @@
           placeholder="Confirm your password"
           @input="() => performValidation('confirmPassword')"
         />
-        <p class="error-text">{{ confirmPasswordError }}</p>
+        <p id="cnfPasswordErrMsg" class="error-text">
+          {{ confirmPasswordError }}
+        </p>
       </div>
       <div class="mb-3">
         <label for="country" class="form-label">Country</label>
@@ -64,7 +66,7 @@
           <option value="india">India</option>
           <option value="us">United States</option>
         </select>
-        <p class="error-text">{{ countryError }}</p>
+        <p id="countryErrMsg" class="error-text">{{ countryError }}</p>
       </div>
       <p v-if="serverError" class="error-text">{{ serverError }}</p>
 

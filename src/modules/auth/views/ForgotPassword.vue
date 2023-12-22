@@ -15,7 +15,7 @@
           placeholder="Enter your email"
           @input="() => performValidation('email')"
         />
-        <p class="error-text">{{ emailError }}</p>
+        <p id="emailErrMsg" class="error-text">{{ emailError }}</p>
       </div>
       <p v-if="serverError" class="error-text">{{ serverError }}</p>
       <div class="d-flex align-items-center mb-3">

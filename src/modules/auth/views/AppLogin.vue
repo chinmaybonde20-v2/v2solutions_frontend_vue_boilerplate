@@ -14,19 +14,21 @@
           placeholder="Enter your email"
           @input="() => performValidation('email')"
         />
-        <p class="error-text">{{ emailError }}</p>
+        <p id="emailErrMsg" class="error-text">{{ emailError }}</p>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input
           v-model="password"
-          type="password"
+          type="text"
           id="password"
           class="form-control"
           placeholder="Enter your password"
           @input="performValidation('password')"
         />
-        <p class="error-text">{{ passwordError }}</p>
+        <p id="passwordErrMsg" class="error-text">
+          {{ passwordError }}
+        </p>
       </div>
       <p v-if="serverError" class="error-text">{{ serverError }}</p>
 

@@ -17,7 +17,7 @@
             placeholder="Enter your authenticator code"
             @input="() => performValidation('otp')"
           />
-          <p class="error-text">{{ mfaOtpError }}</p>
+          <p id="mfaErrMsg" class="error-text">{{ mfaOtpError }}</p>
         </div>
 
         <p v-if="serverError" class="error-text">{{ serverError }}</p>

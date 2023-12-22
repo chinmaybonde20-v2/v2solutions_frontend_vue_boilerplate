@@ -1,6 +1,10 @@
 <template>
   <div class="login-container">
-    <form class="login-form form-focus" @submit.prevent="resetPassword">
+    <form
+      id="form"
+      class="login-form form-focus"
+      @submit.prevent="resetPassword"
+    >
       <h2 class="mb-4 display-6">Reset Password</h2>
       <div class="mb-3" v-if="!tokenProvided">
         <label for="otp" class="form-label">Enter OTP</label>
@@ -12,7 +16,7 @@
           placeholder="Enter OTP"
           @input="() => performValidation('otp')"
         />
-        <p class="error-text">{{ otpError }}</p>
+        <p id="otpErrMsg" class="error-text">{{ otpError }}</p>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">New Password</label>
@@ -24,7 +28,7 @@
           placeholder="Enter new password"
           @input="() => performValidation('password')"
         />
-        <p class="error-text">{{ passwordError }}</p>
+        <p id="passwordErrMsg" class="error-text">{{ passwordError }}</p>
       </div>
       <div class="mb-3">
         <label for="confirmPassword" class="form-label"
@@ -38,7 +42,7 @@
           placeholder="Confirm new password"
           @input="() => performValidation('confirmPassword')"
         />
-        <p class="error-text">{{ confirmPasswordError }}</p>
+        <p id="confirmErrMsg" class="error-text">{{ confirmPasswordError }}</p>
       </div>
       <p v-if="serverError" class="error-text">{{ serverError }}</p>
       <button type="submit" class="btn btn-primary">Reset Password</button>

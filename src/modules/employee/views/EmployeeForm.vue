@@ -30,7 +30,9 @@
                     class="form-control"
                     @input="() => performValidation('employeeName')"
                   />
-                  <div class="text-danger">{{ employeeNameError }}</div>
+                  <div id="empNameErrMsg" class="text-danger">
+                    {{ employeeNameError }}
+                  </div>
                 </div>
 
                 <div class="mb-3">
@@ -44,7 +46,9 @@
                     class="form-control"
                     @input="() => performValidation('employeeEmail')"
                   />
-                  <div class="text-danger">{{ employeeEmailError }}</div>
+                  <div id="empEmailErrMsg" class="text-danger">
+                    {{ employeeEmailError }}
+                  </div>
                 </div>
 
                 <div class="mb-3">
@@ -60,7 +64,9 @@
                     :min="minDate"
                     :max="maxDate.toISOString().split('T')[0]"
                   />
-                  <div class="text-danger">{{ employeeDOBError }}</div>
+                  <div id="empDOBErrMsg" class="text-danger">
+                    {{ employeeDOBError }}
+                  </div>
                 </div>
 
                 <div class="mb-3">
@@ -74,7 +80,9 @@
                     class="form-control"
                     @input="() => performValidation('employeeDesignation')"
                   />
-                  <div class="text-danger">{{ employeeDesignationError }}</div>
+                  <div id="empDesgnErrMsg" class="text-danger">
+                    {{ employeeDesignationError }}
+                  </div>
                 </div>
 
                 <div class="mb-3">
@@ -88,7 +96,9 @@
                     class="form-control"
                     @input="() => performValidation('employeeEducation')"
                   />
-                  <div class="text-danger">{{ employeeEducationError }}</div>
+                  <div id="empEduErrMsg" class="text-danger">
+                    {{ employeeEducationError }}
+                  </div>
                 </div>
                 <p v-if="serverError" class="error-text">{{ serverError }}</p>
                 <button type="submit" class="btn btn-primary">
