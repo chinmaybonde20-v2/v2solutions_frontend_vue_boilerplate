@@ -41,9 +41,15 @@
         </router-link>
       </li>
       <li v-else class="sidenav-nav-item">
-        <p @click="showLogoutModal" class="sidenav-nav-link">
+        <p class="sidenav-nav-link">
           <i class="sidenav-link-icon fa fa-power-off"></i>
-          <span class="sidenav-link-text" v-if="isCollapsed">Logout</span>
+          <span
+            class="sidenav-link-text"
+            @click="showLogoutModal"
+            id="logoutButton"
+            v-if="isCollapsed"
+            >Logout</span
+          >
         </p>
       </li>
     </ul>
