@@ -20,7 +20,7 @@
         <label for="password" class="form-label">Password</label>
         <input
           v-model="password"
-          type="text"
+          type="password"
           id="password"
           class="form-control"
           placeholder="Enter your password"

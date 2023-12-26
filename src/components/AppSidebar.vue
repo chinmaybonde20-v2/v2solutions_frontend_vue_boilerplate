@@ -17,7 +17,7 @@
     <!-- Links -->
     <ul class="sidenav-nav">
       <li class="sidenav-nav-item">
-        <router-link to="/" class="sidenav-nav-link" @click="onClickHome">
+        <router-link to="/home" class="sidenav-nav-link" @click="onClickHome">
           <i class="sidenav-link-icon fa fa-home"></i>
           <span class="sidenav-link-text" v-if="isCollapsed">Home</span>
         </router-link>
