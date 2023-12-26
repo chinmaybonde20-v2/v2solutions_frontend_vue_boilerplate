@@ -21,21 +21,17 @@ describe("MFAAuthenticator", () => {
 
   it("submits the form on button click with valid OTP", async () => {
     const wrapper = mount(MFAAuthenticator);
-    // Set valid OTP value
     wrapper.find("input#otp").setValue("123456");
     await wrapper.vm.$nextTick();
 
     wrapper.find("form").trigger("submit");
-    // Add your assertions after form submission, like checking redirection or success messages
   });
 
   it("does not submit the form on button click with invalid OTP", async () => {
     const wrapper = mount(MFAAuthenticator);
-    // Set invalid OTP value intentionally
     wrapper.find("input#otp").setValue("");
     await wrapper.vm.$nextTick();
 
     wrapper.find("form").trigger("submit");
-    // Add your assertions after the button click to ensure the form doesn't submit
   });
 });

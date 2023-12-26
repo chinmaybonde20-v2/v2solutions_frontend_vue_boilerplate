@@ -79,7 +79,6 @@ describe("Signup", () => {
 
   it("submits the form on button click with valid inputs", async () => {
     const wrapper = mount(Signup);
-    // Set valid input values
     wrapper.find("input#name").setValue("John Doe");
     wrapper.find("input#email").setValue("test@example.com");
     wrapper.find("input#password").setValue("TestPassword@123");
@@ -88,12 +87,10 @@ describe("Signup", () => {
     await wrapper.vm.$nextTick();
 
     wrapper.find("button.btn-primary").trigger("click");
-    // Add your assertions after form submission, like checking redirection or success messages
   });
 
   it("does not submit the form on button click with invalid inputs", async () => {
     const wrapper = mount(Signup);
-    // Set invalid input values intentionally
     wrapper.find("input#name").setValue("");
     wrapper.find("input#email").setValue("invalid-email");
     wrapper.find("input#password").setValue("weakpass");
@@ -102,6 +99,5 @@ describe("Signup", () => {
     await wrapper.vm.$nextTick();
 
     wrapper.find("button.btn-primary").trigger("click");
-    // Add your assertions after the button click to ensure the form doesn't submit
   });
 });

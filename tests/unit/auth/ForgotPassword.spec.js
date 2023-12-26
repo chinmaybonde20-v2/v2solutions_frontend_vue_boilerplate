@@ -24,21 +24,18 @@ describe("ForgotPassword", () => {
 
   it("submits the form on button click with valid email", async () => {
     const wrapper = mount(ForgotPassword);
-    // Set valid email value
+
     wrapper.find("input#email").setValue("test@example.com");
     await wrapper.vm.$nextTick();
 
     wrapper.find("form").trigger("submit");
-    // Add your assertions after form submission, like checking redirection or success messages
   });
 
   it("does not submit the form on button click with invalid email", async () => {
     const wrapper = mount(ForgotPassword);
-    // Set invalid email value intentionally
     wrapper.find("input#email").setValue("invalidemail");
     await wrapper.vm.$nextTick();
 
     wrapper.find("form").trigger("submit");
-    // Add your assertions after the button click to ensure the form doesn't submit
   });
 });
