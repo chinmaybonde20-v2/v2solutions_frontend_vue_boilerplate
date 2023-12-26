@@ -17,7 +17,7 @@
     <!-- Links -->
     <ul class="sidenav-nav">
       <li class="sidenav-nav-item">
-        <router-link to="/home" class="sidenav-nav-link" @click="onClickHome">
+        <router-link to="/" class="sidenav-nav-link" @click="onClickHome">
           <i class="sidenav-link-icon fa fa-home"></i>
           <span class="sidenav-link-text" v-if="isCollapsed">Home</span>
         </router-link>
@@ -41,15 +41,9 @@
         </router-link>
       </li>
       <li v-else class="sidenav-nav-item">
-        <p class="sidenav-nav-link">
+        <p @click="showLogoutModal" class="sidenav-nav-link">
           <i class="sidenav-link-icon fa fa-power-off"></i>
-          <span
-            class="sidenav-link-text"
-            @click="showLogoutModal"
-            id="logoutButton"
-            v-if="isCollapsed"
-            >Logout</span
-          >
+          <span class="sidenav-link-text" v-if="isCollapsed">Logout</span>
         </p>
       </li>
     </ul>

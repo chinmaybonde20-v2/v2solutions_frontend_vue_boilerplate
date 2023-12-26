@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <GoogleLogin :callback="callback" promt />
+    <GoogleLogin :clientId="clientId" :callback="callback" promt />
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import axios from "axios";
 
 const router = useRouter();
 const store = useStore();
+const clientId = process.env.VUE_APP_GOOGLE_CLIENT_ID;
 
 const callback = async (response) => {
   try {

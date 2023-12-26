@@ -9,6 +9,6 @@ createApp(App)
   .use(router)
   .use(store)
   .use(vue3GoogleLogin, {
-    clientId: process.env.VUE_APP_GOOGLE_CLIENT_ID,
+    clientId: process.env.VUE_APP_GOOGLE_CLIENT_ID, // Pass your Google client ID here
   })
   .mount("#app");
