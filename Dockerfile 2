@@ -1,17 +1,34 @@
-# build stage
-FROM node:lts-alpine
-# install simple http server for serving static content
-RUN npm install -g http-server
-# make the 'app' folder the current working directory
-WORKDIR /app
+# # build stage
+# FROM node:lts-alpine
+# # install simple http server for serving static content
+# RUN npm install -g http-server
+# # make the 'app' folder the current working directory
+# WORKDIR /app
 
-# install and cache app dependencies
+# # install and cache app dependencies
+# COPY package*.json ./
+# RUN npm install
+# RUN npm install -g @vue/cli
+
+# COPY . .
+# RUN npm run build
+# EXPOSE 8080
+# # start app
+# CMD ["npm", "run", "serve"]
+
+
+FROM node:16.5.0 as build-stage
+
+
+WORKDIR /app
 COPY package*.json ./
 RUN npm install
-RUN npm install -g @vue/cli
-
 COPY . .
 RUN npm run build
+
+
+# production stage
+FROM nginx:1.13.12-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE 8080
-# start app
-CMD ["npm", "run", "serve"]
+CMD ["nginx", "-g", "daemon off;"]
